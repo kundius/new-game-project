@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://db1vpmss32mjn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_32j5s"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwrno"]
+albedo_color = Color(5.29438e-07, 0.589579, 0.454916, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vpyw"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqi4h"]
+albedo_color = Color(1, 0.546332, 0.572821, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wln8j"]
+albedo_color = Color(0.710529, 0.506661, 0.902206, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="block-1" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_32j5s")
+surface_material_override/0 = SubResource("StandardMaterial3D_cwrno")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="block-1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-1/StaticBody3D"]
+shape = SubResource("BoxShape3D_1vpyw")
+
+[node name="block-2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+mesh = SubResource("BoxMesh_32j5s")
+skeleton = NodePath("../block-3")
+surface_material_override/0 = SubResource("StandardMaterial3D_rqi4h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="block-2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-2/StaticBody3D"]
+shape = SubResource("BoxShape3D_1vpyw")
+
+[node name="block-3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+mesh = SubResource("BoxMesh_32j5s")
+skeleton = NodePath("../block-1")
+surface_material_override/0 = SubResource("StandardMaterial3D_wln8j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="block-3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-3/StaticBody3D"]
+shape = SubResource("BoxShape3D_1vpyw")
