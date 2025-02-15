@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://db1vpmss32mjn"]
+[gd_scene load_steps=7 format=3 uid="uid://db1vpmss32mjn"]
+
+[ext_resource type="PackedScene" uid="uid://khw1sy7syo7l" path="res://Grass_block.fbx" id="1_qcjja"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_32j5s"]
 size = Vector3(2, 2, 2)
@@ -47,3 +49,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wln8j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="block-3/StaticBody3D"]
 shape = SubResource("BoxShape3D_1vpyw")
+
+[node name="Grass_block" parent="." instance=ExtResource("1_qcjja")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 2.78078, -0.941237, 0.428427)

@@ -1,18 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://drlsqqc0ol4jd"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_h7ehk"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_wlexp"]
+[ext_resource type="PackedScene" uid="uid://c4yeqwqljt0yq" path="res://baby_yoda_rig_2018.fbx" id="2_ub5mf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hkh8c"]
+height = 1.15757
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_h7ehk")
 
-[node name="PlayerModel" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_wlexp")
+[node name="baby_yoda_rig_2018" parent="." instance=ExtResource("2_ub5mf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.246656, 0)
 shape = SubResource("CapsuleShape3D_hkh8c")
 
 [node name="Camera_Controller" type="Node3D" parent="."]
@@ -22,4 +23,4 @@ top_level = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62318, 6.41265)
 
 [node name="Camera3D" type="Camera3D" parent="Camera_Controller/Camera_Target"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.247857, 0)
+transform = Transform3D(0.871466, 0.140682, -0.469846, 0.0327948, 0.93912, 0.34202, 0.489358, -0.313467, 0.813798, -2, 1, 0)
