@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyxiqcx1ade1v"]
+
+[ext_resource type="PackedScene" uid="uid://khw1sy7syo7l" path="res://Grass_block.fbx" id="1_hje8j"]
+
+[node name="Grass_block" instance=ExtResource("1_hje8j")]
+
+[node name="MSH_Grass_block" parent="." index="0"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, -1, 0)
+
+[node name="Grass_block_extrusion" parent="." index="1"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, -1, 0)

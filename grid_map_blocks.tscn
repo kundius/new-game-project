@@ -1,54 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://db1vpmss32mjn"]
+[gd_scene load_steps=9 format=3 uid="uid://db1vpmss32mjn"]
 
-[ext_resource type="PackedScene" uid="uid://khw1sy7syo7l" path="res://Grass_block.fbx" id="1_qcjja"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_32j5s"]
-size = Vector3(2, 2, 2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwrno"]
-albedo_color = Color(5.29438e-07, 0.589579, 0.454916, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1vpyw"]
-size = Vector3(2, 2, 2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqi4h"]
-albedo_color = Color(1, 0.546332, 0.572821, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wln8j"]
-albedo_color = Color(0.710529, 0.506661, 0.902206, 1)
+[ext_resource type="PackedScene" uid="uid://d2wfc6e70cq41" path="res://end_(0).glb" id="1_ukdyd"]
+[ext_resource type="PackedScene" uid="uid://cx6arfgx43twh" path="res://mid.glb" id="2_sfx73"]
+[ext_resource type="PackedScene" uid="uid://bi83eumq4u7mt" path="res://start.glb" id="3_34t2h"]
+[ext_resource type="PackedScene" uid="uid://chjwa0ntwm4d3" path="res://mid_v2.glb" id="4_2cpq1"]
+[ext_resource type="PackedScene" uid="uid://cdowyol8enqpl" path="res://Grass_block_(0).fbx" id="5_gmt8r"]
+[ext_resource type="PackedScene" uid="uid://dvrtlxomaw5cc" path="res://mid_col.glb" id="6_w083u"]
+[ext_resource type="PackedScene" uid="uid://bxmdkee1ugeux" path="res://end_col.glb" id="7_f2aqt"]
+[ext_resource type="PackedScene" uid="uid://u3dk33rtpibx" path="res://start_col.glb" id="8_wwnyh"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="block-1" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_32j5s")
-surface_material_override/0 = SubResource("StandardMaterial3D_cwrno")
+[node name="start" parent="." instance=ExtResource("3_34t2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.90669, 0, 6.79661)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-1"]
+[node name="mid" parent="." instance=ExtResource("2_sfx73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25376, 0, 6.8406)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-1/StaticBody3D"]
-shape = SubResource("BoxShape3D_1vpyw")
+[node name="end" parent="." instance=ExtResource("1_ukdyd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79999, 0, 6.07559)
 
-[node name="block-2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-mesh = SubResource("BoxMesh_32j5s")
-skeleton = NodePath("../block-3")
-surface_material_override/0 = SubResource("StandardMaterial3D_rqi4h")
+[node name="mid_v2" parent="." instance=ExtResource("4_2cpq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.73509, 0, 7.96601)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-2"]
+[node name="Grass_block_(0)" parent="." instance=ExtResource("5_gmt8r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2138, 0, 6.88263)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-2/StaticBody3D"]
-shape = SubResource("BoxShape3D_1vpyw")
+[node name="mid_col2" parent="." instance=ExtResource("6_w083u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.15851, 0, 8.29051)
 
-[node name="block-3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-mesh = SubResource("BoxMesh_32j5s")
-skeleton = NodePath("../block-1")
-surface_material_override/0 = SubResource("StandardMaterial3D_wln8j")
+[node name="end_col2" parent="." instance=ExtResource("7_f2aqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90821, 0, 9.1517)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-3/StaticBody3D"]
-shape = SubResource("BoxShape3D_1vpyw")
-
-[node name="Grass_block" parent="." instance=ExtResource("1_qcjja")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 2.78078, -0.941237, 0.428427)
+[node name="start_col2" parent="." instance=ExtResource("8_wwnyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464025, 0, 8.94148)
